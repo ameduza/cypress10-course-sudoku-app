@@ -1,8 +1,9 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress';
 
 const cypressJsonConfig = {
-  baseUrl: "http://localhost:3000"
-}
+  baseUrl: 'http://localhost:3000',
+  watchForFileChanges: false,
+};
 
 export default defineConfig({
   e2e: {
