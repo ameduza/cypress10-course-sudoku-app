@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Timer tests', () => {
   it.only('checks game time secs', () => {
     cy.visit('/');

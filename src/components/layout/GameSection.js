@@ -1,14 +1,10 @@
 import React from 'react';
 import { useSudokuContext } from '../../context/SudokuContext';
 
-type GameSectionProps = {
-  onClick: (indexOfArray: number) => void
-};
-
 /**
  * React component for the Game Section
  */
-export const GameSection = (props: GameSectionProps) => {
+export const GameSection = (props) => {
   const rows = [0,1,2,3,4,5,6,7,8];
   let { numberSelected,
         gameArray,
@@ -22,7 +18,7 @@ export const GameSection = (props: GameSectionProps) => {
    * cells in the same row/column/box as the current cell.
    */
   // eslint-disable-next-line
-  function _isCellRelatedToSelectedCell(row: number, column: number) {
+  function _isCellRelatedToSelectedCell(row, column) {
     if (cellSelected === row * 9 + column) {
       return true;
     }
@@ -54,7 +50,7 @@ export const GameSection = (props: GameSectionProps) => {
    * Cell Highlight Method 2: Highlight all cells with
    * the same number as in the current cell.
    */
-  function _isCellSameAsSelectedCell(row: number, column: number) {
+  function _isCellSameAsSelectedCell(row, column) {
     if (fastMode) {
       if (numberSelected === gameArray[row * 9 + column]) {
         return true;
@@ -76,7 +72,7 @@ export const GameSection = (props: GameSectionProps) => {
   /**
    * Returns the classes for a cell related to the selected cell.
    */
-  function _selectedCell(indexOfArray: number, value: string, highlight: string) {
+  function _selectedCell(indexOfArray, value, highlight) {
     if (value !== '0') {
       if (initArray[indexOfArray] === '0') {
         return (
@@ -97,7 +93,7 @@ export const GameSection = (props: GameSectionProps) => {
   /**
    * Returns the classes or a cell not related to the selected cell.
    */
-  function _unselectedCell(indexOfArray: number, value: string) {
+  function _unselectedCell(indexOfArray, value) {
     if (value !== '0') {
       if (initArray[indexOfArray] === '0') {
         return (

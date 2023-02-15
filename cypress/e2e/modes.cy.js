@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Play mode - shows a different number of empty cells', () => {
   const preFilledCellsNumberEasy = 45;
   const preFilledCellsNumberMedium = 40;

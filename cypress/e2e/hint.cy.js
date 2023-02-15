@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 describe('Hint', () => {
   const preFilledCellsNumber = 45;
 

@@ -1,4 +1,4 @@
-import { defineConfig } from 'cypress';
+const { defineConfig } = require('cypress');
 
 const cypressJsonConfig = {
   baseUrl: 'http://localhost:3000',
@@ -6,7 +6,7 @@ const cypressJsonConfig = {
   viewportHeight: 800,
 };
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
     ...cypressJsonConfig,
     setupNodeEvents(on, config) {

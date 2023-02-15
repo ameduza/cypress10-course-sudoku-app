@@ -320,7 +320,6 @@
 
             if(nr_candidates > max_nr_candidates){
                 max_nr_candidates = nr_candidates;
-                // eslint-disable-next-line no-unused-vars
                 max_candidates_square = square;
             }
         }
