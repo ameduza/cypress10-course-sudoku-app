@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Timer tests', () => {
-  it.only('checks game time secs', () => {
+  it('checks game time secs', () => {
     cy.visit('/');
     for (let index = 0; index < 5; index++) {
       cy.contains('.status__time', `00:0${index}`);
@@ -13,9 +13,17 @@ describe('Timer tests', () => {
   it('shows correct time in certain time frames', () => {
     cy.clock();
     cy.visit('/');
+    // make sure the game has fully loaded
+    cy.get('.game__cell:contains(0)').should('have.length.greaterThan', 0);
+
     cy.contains('.status__time', '00:00');
-    // cy.tick() doesn't work as expected below
     cy.tick(30_000);
     cy.contains('.status__time', '00:30');
+
+    cy.tick(30_000);
+    cy.contains('.status__time', '01:00');
+
+    cy.tick(25_000);
+    cy.contains('.status__time', '01:25');
   });
 });
