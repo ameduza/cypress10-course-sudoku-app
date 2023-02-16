@@ -4,7 +4,7 @@ import { Numbers } from '../../src/components/Numbers';
 import '../../src/App.css';
 import { SudokuContext } from '../../src/context/SudokuContext';
 
-describe('Numbers', { viewportHeight: 800, viewportWidth: 800 }, () => {
+describe('Numbers', () => {
   it('shows numbers', () => {
     cy.mount(
       <div className="innercontainer">
