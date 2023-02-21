@@ -28,7 +28,7 @@ describe('Play mode - shows a different number of empty cells', () => {
     );
   });
 
-  it('shows 40 empty cells for Hard mode', () => {
+  it('shows 30 empty cells for Hard mode', () => {
     cy.get('.status__difficulty-select').select('Hard');
     cy.get('.game__cell--filled').should(
       'have.length',

@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-//import { React } from 'react';
 import { Difficulty } from '../../src/components/Difficulty';
 import '../../src/App.css';
 
