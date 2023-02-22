@@ -13,4 +13,13 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+
+  component: {
+    devServer: {
+      framework: 'create-react-app',
+      bundler: 'webpack',
+    },
+    viewportHeight: 800,
+    viewportWidth: 800,
+  },
 });
